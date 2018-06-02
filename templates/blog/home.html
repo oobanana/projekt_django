@@ -3,13 +3,31 @@
 {% block content %}
 <head>
     <meta charset="UTF-8">
-    <title>strona glowna</title>
+    <title>Strona glowna</title>
 </head>
 <body>
-tu trzeba cos wymyslec
+
 </body>
 {% endblock %}
 
 {% block left %}
-habubaba
+<ul>
+    {% if not user.is_authenticated %}
+    <li>
+            <a href="/register">
+                <p>Zarejestruj się</p>
+            </a>
+        </li>
+        <li>
+            <a href="/accounts/login">
+                <p>Zaloguj się</p>
+            </a>
+        </li>
+    {% else %}
+    <li>
+        <a href="/accounts/logout">
+            <p>Wyloguj</p></a>
+    </li>
+    {% endif %}
+    </ul>
 {% endblock %}

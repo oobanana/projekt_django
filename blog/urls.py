@@ -10,4 +10,5 @@ urlpatterns = [
     url(r'^blog/(?P<username>\w+)/(?P<year>\d+)/(?P<month>\w+)/$',views.month_post),
     url(r'^user/(?P<username>\w+)/$',views.user),
     url(r'^post/(?P<id>\d+)/$',views.post),
+    url(r'^register/$',views.userRegister.as_view()),
     ]

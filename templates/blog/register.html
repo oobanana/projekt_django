@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja</title>
+</head>
+
+<body>
+{% block content %}
+<script>
+    {% if okienko %}
+    alert('{{ okienko }}');
+    {% endif %}
+</script>
+
+<h3>Wypełnij formularz swoimi danymi:</h3>
+<div>
+    <form class="'form-horizontal" action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+
+            <span class="text-danger small">{{ field.errors }}</span>
+            <label>{{ field.label_tag }}</label>
+            <div>{{ field }}</div>
+
+        {% endfor %}
+        <button type="submit">Utwórz konto</button>
+    </form>
+
+    <form action="/">
+        <button type="Submit">Anuluj</button>
+    </form>
+</div>
+{% endblock %}
+</body>
+

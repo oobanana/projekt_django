@@ -5,6 +5,13 @@
     <title>{{ user.username }}</title>
 </head>
 <body>
+
+<script>
+    {% if okienko %}
+    alert('{{ okienko }}');
+    {% endif %}
+</script>
+
 <h1> Profil użytkownika: {{ user.username }}</h1>
     <section>
         <p> Imię: {{ user.first_name }}</p>
@@ -13,3 +20,20 @@
     </section>
 </body>
 {% endblock %}
+
+{% block left %}
+ <ul>
+        <li>
+            <a href="/">
+                <p>Strona główna</p>
+            </a>
+        </li>
+        <li>
+            <a href="/blog/{{ user.username }}">
+                <p>Blog użytkownika {{ user.username }}</p>
+            </a>
+        </li>
+
+    </ul>
+{% endblock %}
+

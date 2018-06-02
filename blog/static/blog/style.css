@@ -49,3 +49,8 @@ body{
 				color: darkgreen;
 				text-decoration: none;
 			}
+
+			#bottom{
+			    text-align: bottom;
+
+			}
