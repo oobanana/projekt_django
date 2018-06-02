@@ -11,3 +11,19 @@
 <h4> {{ post.data }}</h4>
 </body>
 {% endblock %}
+
+{% block left %}
+    <ul>
+        <li>
+            <a href="/">
+                <p>Strona główna</p>
+            </a>
+        </li>
+        <li>
+            <a href="/blog/{{ post.autor.username }}">
+                <p>Blog użytkownika {{ post.autor.username }}</p>
+            </a>
+        </li>
+
+    </ul>
+{% endblock %}

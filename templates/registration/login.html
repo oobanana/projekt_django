@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+    <h2>Wprowadź poniższe dane, aby się zalogować</h2>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Login</button>
+        </form>
+        <form action="/">
+        <button type="Submit">Anuluj</button>
+    </form>
+    </div>
+
+{% endblock %}

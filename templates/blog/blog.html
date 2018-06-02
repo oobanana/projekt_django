@@ -14,3 +14,21 @@
 {% endif %}
 </body>
 {% endblock %}
+
+
+{% block left %}
+ <ul>
+        <li>
+            <a href="/">
+                <p>Strona główna</p>
+            </a>
+        </li>
+        <li>
+            <a href="/user/{{ users.username }}">
+                <p>Profil użytkownika {{ users.username }}</p>
+            </a>
+        </li>
+
+    </ul>
+{% endblock %}
+

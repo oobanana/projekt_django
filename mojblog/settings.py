@@ -25,10 +25,10 @@ SECRET_KEY = 'nd$vm*-#=2o#7-p(!l))g^b&cb_55j!^!d3q%qv$rxspi!cdv6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['oobanana.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
-# Application definition
+
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
@@ -121,6 +121,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT=os.path.join(BASE_DIR, 'static')
 
-MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+LOGIN_REDIRECT_URL='/'
+LOGOUT_REDIRECT_URL = '/'
