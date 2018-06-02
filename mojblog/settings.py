@@ -25,7 +25,7 @@ SECRET_KEY = 'nd$vm*-#=2o#7-p(!l))g^b&cb_55j!^!d3q%qv$rxspi!cdv6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['oobanana.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'oobanana.pythonanywhere.com']
 
 
 
