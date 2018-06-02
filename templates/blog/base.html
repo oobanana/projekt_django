@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel ="stylesheet" type = "text/css" href="{% static 'blog/style.css' %}"/>
+</head>
+<body>
+
+<main>
+    <div id="content">
+    <div class=innertube">
+    {% block content %}
+    {% endblock %}
+    </div>
+     </div>
+</main>
+
+<nav id="nav">
+    <div class=innertube">
+    {% block left %}
+    {% endblock %}
+    </div>
+</nav>
+</body>
+
+</html>
