@@ -2,13 +2,39 @@
 
 {% block content %}
 <head>
-    <title>{{ post.tytul }}</title>
+    <title>post: {{ post.tytul }}</title>
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 </head>
 <body>
 <h1> Tytuł: {{ post.tytul }}</h1>
-<h2> Autor: {{ post.autor }}</h2>
-<h3> {{ post.tresc }}</h3>
+<h2> {{ post.tresc }}</h2>
+<h3> Autor: {{ post.autor }}</h3>
 <h4> {{ post.data }}</h4>
+
+{% if comments %}
+
+<p>--------------------------------------------------------
+</p>
+<h2>Komentarze:</h2>
+<p>--------------------------------------------------------
+</p>
+{% for comment in comments %}
+    <div class="comment">
+        <h3>
+            {{ comment.tresc }}
+        </h3>
+        <h4>
+            {{ comment.autor }} {{ comment.data }}
+        </h4></div>
+{% endfor %}
+
+{% else %}
+<h3><p>Brak komentarzy</p></h3>
+{% endif %}
+    <form action="/post/{{ post.id }}/comment/new">
+        <button type="Submit">Dodaj komentarz</button>
+    </form>
+
 </body>
 {% endblock %}
 
@@ -16,14 +42,36 @@
     <ul>
         <li>
             <a href="/">
-                <p>Strona główna</p>
+                <h3><p>Strona główna</p></h3>
             </a>
         </li>
         <li>
             <a href="/blog/{{ post.autor.username }}">
-                <p>Blog użytkownika {{ post.autor.username }}</p>
+               <h3><p>Blog użytkownika {{ post.autor.username }}</p></h3>
             </a>
         </li>
 
     </ul>
+
+<ul id="bottom">
+    {% if user.is_authenticated %}
+        {% if user == post.autor %}
+    <li>
+        <a href="/post/{{ post.id }}/edit">
+            <h3><p>Edytuj post</p></h3>
+        </a>
+    </li>
+        {% endif %}
+    {% endif %}
+</ul>
+{% endblock %}
+{% block right %}
+    {% if user.is_authenticated %}
+<ul>
+     <li>
+         <h3><a href="/accounts/logout">
+            <p>Wyloguj</p></a></h3>
+
+    </li></ul>
+    {% endif %}
 {% endblock %}

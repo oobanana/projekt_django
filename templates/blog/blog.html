@@ -2,10 +2,11 @@
 {% block content %}
 <head>
     <meta charset="UTF-8">
-    <title>{{ username }} blog</title>
+    <title>Blog użytkownika: {{ author.username }}</title>
 </head>
 <body>
-<h1>Blog użytkownika: {{ username }}</h1>
+<h1>Blog użytkownika: {{ author.username }}</h1>
+
 {%  if posts %}
 {% for post in posts %}
 <h3><a href="/post/{{ post.id }}"> {{ post.tytul }}</a> </h3>
@@ -20,15 +21,31 @@
  <ul>
         <li>
             <a href="/">
-                <p>Strona główna</p>
+                <h3> <p>Strona główna</p></h3>
+
             </a>
         </li>
         <li>
-            <a href="/user/{{ users.username }}">
-                <p>Profil użytkownika {{ users.username }}</p>
+            <a href="/user/{{ user.username }}">
+               <h3><p>Profil użytkownika {{ user.username }}</p></h3>
             </a>
         </li>
 
+         <li>
+            <a href="/post/new">
+                <h3><p>Dodaj post</p></h3>
+            </a>
+        </li>
     </ul>
+{% endblock %}
+{% block right %}
+    {% if user.is_authenticated %}
+<ul>
+     <li>
+         <h3><a href="/accounts/logout">
+            <p>Wyloguj</p></a></h3>
+
+    </li></ul>
+    {% endif %}
 {% endblock %}
 

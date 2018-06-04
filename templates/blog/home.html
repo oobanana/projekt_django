@@ -1,12 +1,31 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 
 {% block content %}
 <head>
+ <link href="/static/fontawesome/fontawesome-all.css" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Strona glowna</title>
+
 </head>
 <body>
 
+    <div style="margin-left: 500px;">
+        <h1>
+            <p>Serwis blogowy</p>
+        </h1>
+    </div>
+    <div style="margin-left: 300px;">
+        <img src="{% static "blog/Blogging.png" %}" alt="My image"/>
+    </div>
+    <div style="margin-left: 100px;">
+        <h3>
+           <p> Witaj!
+
+               Aby otrzymać pełny dostęp do zarzadzania postami oraz swoim blogiem, musisz sie zarejestrowac </p>
+               <p>lub jezeli posiadasz juz konto zalogowac sie.</p>
+        </h3>
+    </div>
 </body>
 {% endblock %}
 
@@ -15,19 +34,37 @@
     {% if not user.is_authenticated %}
     <li>
             <a href="/register">
-                <p>Zarejestruj się</p>
+                <h3><p>Zarejestruj się</p></h3>
             </a>
         </li>
         <li>
             <a href="/accounts/login">
-                <p>Zaloguj się</p>
+               <h3> <p>Zaloguj się</p></h3>
             </a>
         </li>
     {% else %}
-    <li>
-        <a href="/accounts/logout">
-            <p>Wyloguj</p></a>
-    </li>
+
+
+        <li>
+            <a href="{% url 'profile' user.username %}">
+                <h3><p>Pokaz swoj profil</p></h3>
+            </a>
+        </li>
+
     {% endif %}
+    <li>
+        <h3><p>Info</p>
+        </h3>
+    </li>
     </ul>
+{% endblock %}
+
+{% block right %}
+    {% if user.is_authenticated %}
+<ul>
+     <li>
+        <a href="/accounts/logout">
+            <h3><p>Wyloguj</p></h3></a>
+     </li></ul>
+    {% endif %}
 {% endblock %}

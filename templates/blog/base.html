@@ -3,13 +3,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel ="stylesheet" type = "text/css" href="{% static 'blog/style.css' %}"/>
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 </head>
 <body>
 
 <main>
-    <div id="content">
+    <div id="content" style="overflow: hidden; clear: both;">
     <div class=innertube">
     {% block content %}
     {% endblock %}
@@ -23,6 +28,12 @@
     {% endblock %}
     </div>
 </nav>
+<nav id="nav2">
+    	<div class="innertube">
+        	{% block right %}
+            {% endblock %}
+        </div>
+    </nav>
 </body>
 
 </html>

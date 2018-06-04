@@ -1,8 +1,18 @@
 {% extends 'blog/base.html' %}
-<head>
-    <title>Posty z : {{ month }}, {{ year }}</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+
+{% block content %}
+
+     <head>
+         {% if month < 10 %}
+        <title>Posty z : 0{{ month }}.{{ year }}</title>
+         {% else %}
+         <title>Posty z : {{ month }}.{{ year }}</title>
+         {% endif %}
+
+    </head>
+
+    <body>
+        jhgfd
+    </body>
+
+{% endblock %}

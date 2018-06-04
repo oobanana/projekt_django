@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>{{ header }}</title>
+</head>
+<body>
+<form method="POST" class="post-form">
+
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button type="submit">Zapisz</button>
+</form>
+   <form action="/blog/{{ user.username }}">
+        <button type="Submit">Anuluj</button>
+    </form>
+</body>
+{% endblock %}

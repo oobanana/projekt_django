@@ -13,7 +13,7 @@
 </script>
 
 <h1> Profil użytkownika: {{ user.username }}</h1>
-    <section>
+    <section style="font-size: 1.5em">
         <p> Imię: {{ user.first_name }}</p>
         <p> Nazwisko: {{ user.last_name }}</p>
         <p> e-mail: {{ user.email }}</p>
@@ -25,15 +25,26 @@
  <ul>
         <li>
             <a href="/">
-                <p>Strona główna</p>
+                <h3><p>Strona główna</p></h3>
             </a>
         </li>
         <li>
             <a href="/blog/{{ user.username }}">
-                <p>Blog użytkownika {{ user.username }}</p>
+                <h3><p>Blog użytkownika {{ user.username }}</p></h3>
             </a>
         </li>
 
     </ul>
+{% endblock %}
+{% block right %}
+    {% if user.is_authenticated %}
+<ul>
+     <li>
+        <a href="/accounts/logout">
+            <h3> <p>Wyloguj</p></h3>
+        </a>
+
+    </li></ul>
+    {% endif %}
 {% endblock %}
 
