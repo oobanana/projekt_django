@@ -23,8 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'nd$vm*-#=2o#7-p(!l))g^b&cb_55j!^!d3q%qv$rxspi!cdv6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
+DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1', 'oobanana.pythonanywhere.com']
 
 

@@ -1,0 +1,49 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Info</title>
+</head>
+        <body>
+        <h1><div style="margin-left: 500px;">
+            Info
+        </div>
+        </h1>
+        <div style="margin-left: 300px;">
+        <img src="{% static "blog/info.png" %}" alt="My image"/>
+        </div>
+        <section style="font-size: 2em">
+                <div class="comment">
+                    <p>Serwis internetowy zarzadzajacy blogami uzytkownikow, zostal stworzony,</p>
+                    <p>aby ludzie dzielili sie swoimi pomyslami oraz myslami o wszystkim.</p>
+                    <p>Istnieje mozliwosc komentowania postow, ale tylko dla zalogowanych uzytkownikow.</p>
+                    <p>Zachecamy do rejestracji oraz pisania.</p>
+                </div>
+        </section>
+        </body>
+
+{% endblock %}
+
+
+{% block left %}
+ <ul>
+
+            <a href="/">
+                <h3> <p>Strona główna</p></h3>
+
+            </a>
+ </ul>
+{% endblock %}
+
+{% block right %}
+
+     {% if user.is_authenticated %}
+    <ul>
+     <li>
+         <h3><a href="/accounts/logout">
+            <p>Wyloguj</p></a></h3>
+
+    </li></ul>
+    {% endif %}
+{% endblock %}

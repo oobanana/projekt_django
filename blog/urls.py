@@ -15,4 +15,5 @@ urlpatterns = [
     url(r'^post/(?P<id>\d+)/edit/$',views.editPost),
     url(r'^post/(?P<id>\d+)/delete/$',views.deletePost),
     url(r'^post/(?P<id>\d+)/comment/new/$',views.comment),
+    url(r'^info/$',views.info),
     ]

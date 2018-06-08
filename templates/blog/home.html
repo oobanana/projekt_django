@@ -10,12 +10,13 @@
 </head>
 <body>
 
-    <div style="margin-left: 500px;">
+ <div style="margin-left: 100px;">
         <h1>
             <p>Serwis blogowy</p>
+            <p></p>
         </h1>
-    </div>
-    <div style="margin-left: 300px;">
+ </div>
+    <div style="margin-left: 100px;">
         <img src="{% static "blog/Blogging.png" %}" alt="My image"/>
     </div>
     <div style="margin-left: 100px;">
@@ -53,8 +54,9 @@
 
     {% endif %}
     <li>
+        <a href="/info">
         <h3><p>Info</p>
-        </h3>
+        </h3></a>
     </li>
     </ul>
 {% endblock %}

@@ -144,5 +144,7 @@ def comment(request,id):
     else:
         form = CommentForm
     return render(request, 'blog/editPostCom.html', {'form': form, 'header': "Dodaj komentarz."})
+def info(request):
+    return render(request, 'blog/info.html',{})
 
 

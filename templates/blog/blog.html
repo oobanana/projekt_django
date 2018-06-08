@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Blog użytkownika: {{ author.username }}</h1>
-
+<section style="font-size: 2em">
 {%  if posts %}
 {% for post in posts %}
 <h3><a href="/post/{{ post.id }}"> {{ post.tytul }}</a> </h3>
@@ -15,7 +15,7 @@
 {% endif %}
 </body>
 {% endblock %}
-
+</section>
 
 {% block left %}
  <ul>
